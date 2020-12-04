@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>预约</title>
+    <script src="{{url_for('static',filename='reserved.js')}}"></script>
 </head>
 
 <body>
@@ -23,6 +24,6 @@
         <br>
         <input type="text" name="issue" placeholder="主板烧了"/>
         <br>
-        <input type="submit" value="Submit"> 
+        <input type="submit" value="确认提交" onclick="reserved()"> 
     </form>
 </body>
