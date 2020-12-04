@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>预约</title>
+</head>
+
+<body>
+    <a href={{url_for(index)}}></a>
+    <form action="{{request.path}}",method="post">
+        <lable>预约人</lable>
+        <br>
+        <input type="text" name="name" placeholder="张三"/>
+        <br>
+        <label>联系电话</label>
+        <br>
+        <input type="text" name="num" placeholder="10086"/>
+        <br>
+        <label>期望预约时间</label>
+        <br>
+        <input type="text" name="time" placeholder="2021/1/1"/>
+        <br>
+        <label>问题描述</label>
+        <br>
+        <input type="text" name="issue" placeholder="主板烧了"/>
+        <br>
+        <input type="submit" value="Submit"> 
+    </form>
+</body>
