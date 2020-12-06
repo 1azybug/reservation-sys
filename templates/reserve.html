@@ -7,7 +7,7 @@
 
 <body>
     <a href="{{url_for('index')}}"></a>
-    <form action="{{request.path}}",method="post">
+    <form action="{{request.path}}" method="post"><!-- #don't need ','!!!!!!! -->
         <lable>预约人</lable>
         <br>
         <input type="text" name="name" placeholder="张三"/>
@@ -22,8 +22,13 @@
         <br>
         <label>问题描述</label>
         <br>
-        <input type="text" name="issue" placeholder="主板烧了"/>
+        <input type="text" name="question" placeholder="主板烧了"/>
+        <br>
+        <label>撤销密码</label>
+        <br>
+        <input type="text" name="password">       
         <br>
         <input type="submit" value="确认提交" onclick="reserved()"> 
+
     </form>
 </body>

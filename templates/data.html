@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>咨询</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>预约人</th>
+                    <th>联系电话</th>
+                    <th>维修时间</th>
+                    <th>问题描述</th>
+                    <th>状态</th>
+                    <th>密码</th>
+                    <th>输入ID和撤销密码</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {%for reserver in reservers%}
+                    <tr>
+                        <td>{{reserver.name}}</td>
+                        <td>{{reserver.num}}</td>
+                        {% if reserver.state=="未处理"%}
+                        <td>{{reserver.time}}(待确认)</td>
+                        {% elif reserver.state=="已处理"%}
+                        <td>{{reserver.time}}(已确定)</td>
+                        {%endif%}
+                        <td>{{reserver.question}}</td>
+                        <td>{{reserver.state}}</td>
+                        <!-- <td>{{reserver.password}}</td> -->
+                        <td>
+                            <form action="{{request.path}}" method="POST">
+                                <input type="text" name="id" placeholder="您的ID是{{reserver.id}}">
+                                <input type="text" name="password">
+                                <input type="submit" value="撤销预约">                                
+                            </form>
+
+                        </td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </body>
+</html>
