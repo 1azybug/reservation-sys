@@ -11,6 +11,7 @@
             <th>联系电话</th>
             <th>期望预约时间</th>
             <th>问题描述</th>
+            <th>状态</th>
             <th>设置维修时间</th>
         </tr>
     </thead>
@@ -26,8 +27,11 @@
                 <td>{{reserver.state}}</td>
                 <td>
                     <form action="{{request.path}}" method="POST">
-                        <input type="text" name="id" placeholder="{{reserver.id}}"> 
-                        <input type="text" name="real_time" placeholder="2021/1/1">
+                        <!-- <input type="text" name="id" placeholder="{{reserver.id}}">  -->
+                        <input type="hidden" name="id" value="{{reserver.id}}"> <!--可以用hidden向后端传数据 -->
+                        <input type="text" name="real_time" placeholder="2021/1/1--10:00am">
+                        <!-- <input type="date" name="real_time" > -->
+                        <!-- <input type="text" name="real_hour" value="7:00pm~9:00pm"> -->
                         <input type="submit" value="确定"> 
                     </form>
                     
