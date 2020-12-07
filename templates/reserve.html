@@ -5,8 +5,9 @@
     <script src="{{url_for('static',filename='reserved.js')}}"></script>
 </head>
 
+
 <body>
-    <a href="{{url_for('index')}}"></a>
+    <a href="{{url_for('index')}}">返回</a>
     <form action="{{request.path}}" method="post"><!-- #don't need ','!!!!!!! -->
         <lable>预约人</lable>
         <br>
